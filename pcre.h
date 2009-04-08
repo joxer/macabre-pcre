@@ -20,6 +20,8 @@ class Regex{
 
   string pattern;
   string string_to_match;
+ 
+
   char* error;
   pcre* pc;
   int err_off;
@@ -89,20 +91,12 @@ public:
   };
 
   string gsub(string what, string with){
-    string result = "";
-    Regex r(string_to_match, what);
-    if(r.match() > 0){
-
-      vector<string> tmp = split(what);
-      result = tmp[0];
-      for(int i = 1 ;i < tmp.size(); i++){
-	result += with + tmp[i] ;
-      }
-      
+    
+    string tmp = string_to_match;
+    int i = 0;
+    while((i = tmp.find(what)) != string::npos){
+      tmp.replace(i, what.size(), with);
     }
-      return result;
-      
-      
-    };
-  
+    return tmp;
+  }
 };

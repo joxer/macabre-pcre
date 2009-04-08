@@ -1,0 +1,17 @@
+macabre-pcre
+
+macabre-pcre is a wrapper around the pcre library for c.
+It provide these method:
+
+Regex::Regex(string, regex)
+
+String is the text that you want to examine and regex is the pattern applied to the text
+
+Regex::match(offset) 
+Return how many times the string have matched
+
+Regex::get()
+Return as vector<string> all the word matched
+
+Regex::split()
+Return as vector<string> all piece not matched

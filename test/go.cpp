@@ -3,13 +3,9 @@
 
 int main(){
   
-  Regex r("ciao mondo ciao asd D:", "\\d");
-  vector<string> s = r.split("") ;
-  
-  for(int i= 0; i < s.size() ;i++)
-    cout << s[i] << endl;
-  
-  cout << r.gsub("a", "ua") << endl;
+  Regex r("ciao mondo", "\\w");
+  r.match();
+  cout << r.gsub("a", "ue12") << endl;
 
   return 0;
 }
