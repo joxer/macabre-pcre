@@ -1,9 +1,3 @@
-#include <pcre.h>
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <map>
-#include <vector>
 using namespace std;
 
 class pos{
@@ -99,4 +93,23 @@ public:
     }
     return tmp;
   }
+
+  bool operator== (string re){
+
+    Regex r(string_to_match, re);
+    if(r.match() > 0)
+      return true;
+    else
+      return false;
+  }
+ 
+  bool operator!= (string re){
+
+    Regex r(string_to_match, re);
+    if(re.match() < 1)
+      return true;
+    else
+      return false;
+  }
+
 };
